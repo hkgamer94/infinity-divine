@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Infinity Divine astrology guidance, healing crystals and zodiac bracelets.">
+    <title>Infinity Divine | Astrology & Healing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="panchang.css">
+</head>
+
+<body>
+    <div id="welcomeScreen">
+        <div class="welcome-content">
+            <img src="assets/logo.png" alt="Infinity Divine Logo">
+            <h1>Welcome to Infinity Divine</h1>
+        </div>
+    </div>
+    <div class="announcement">✦ Free crystal cleansing on every order · Online consultations available worldwide ✦</div>
+    <header class="site-header">
+        <a class="brand" href="index.html">
+            <img src="assets/logo2.png" alt="Infinity Divine Logo" class="brand-logo">
+
+            <span>
+                <strong>Infinity Divine</strong>
+                <small>ASTROLOGY & HEALING</small>
+            </span>
+        </a>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+        <nav class="main-nav"><a class="active-nav" href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="consultation.html">Consultations</a>
+            <a href="#about">Our Story</a>
+        </nav><button class="account-button" id="accountButton">Sign in</button>
+        <a class="cart-button" href="shop.html#bag">Bag <span id="cartCount">0</span></a>
+    </header>
+    <main>
+        <section class="hero"><img class="hero-image" src="assets/celestial-hero.png"
+                alt="Zodiac wheel, amethyst and gemstone bracelet">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="eyebrow">Ancient wisdom · Modern clarity</p>
+                <h1>Align with the life<br><em>written in your stars.</em></h1>
+                <p>Personal astrology guidance and intentionally chosen stones to support your energy, purpose and path.
+                </p>
+                <div class="hero-actions">
+                    <a class="button primary" href="shop.html">Explore the collection</a>
+                    <a class="button ghost" href="consultation.html">Book a consultation</a>
+                </div>
+                <div class="trust-row">
+                    <span>✦ Authentic stones</span>
+                    <span>✦ Energised with intention</span>
+                    <span>✦ Personal guidance</span>
+                </div>
+            </div>
+        </section>
+        <section class="intentions section">
+            <section class="today-panchang">
+
+                <div class="panchang-card">
+
+                    <h2>🕉 Today's Panchang</h2>
+
+                    <div class="panchang-grid">
+
+                        <div>
+                            <span>Date</span>
+                            <strong id="todayDate">Loading...</strong>
+                        </div>
+
+                        <div>
+                            <span>Day</span>
+                            <strong id="todayDay">Loading...</strong>
+                        </div>
+
+                        <div>
+                            <span>Tithi</span>
+                            <strong id="todayTithi">Loading...</strong>
+                        </div>
+
+                        <div>
+                            <span>Nakshatra</span>
+                            <strong id="todayNakshatra">Loading...</strong>
+                        </div>
+
+                        <div>
+                            <span>Moon Sign</span>
+                            <strong id="todayRashi">Loading...</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+            <div class="section-heading centered">
+                <p class="eyebrow dark">Shop by intention</p>
+                <h2>What is your soul seeking?</h2>
+            </div>
+            <div class="intention-grid">
+                <a href="shop.html?filter=Love">
+                    <span>♡</span><strong>Love</strong>
+                    <small>Invite harmony</small>
+                </a>
+                <a href="shop.html?filter=Protection">
+                    <span>◇</span>
+                    <strong>Protection</strong>
+                    <small>Guard your energy</small>
+                </a>
+                <a href="shop.html?filter=Abundance">
+                    <span>☀</span>
+                    <strong>Abundance</strong>
+                    <small>Welcome prosperity</small>
+                </a>
+                <a href="shop.html?filter=Clarity">
+                    <span>✦</span>
+                    <strong>Clarity</strong>
+                    <small>Quiet the mind</small>
+                </a>
+                <a href="shop.html?filter=Healing">
+                    <span>☾</span>
+                    <strong>Healing</strong>
+                    <small>Restore balance</small>
+                </a>
+            </div>
+        </section>
+        <section class="about section" id="about">
+            <div class="about-card">
+                <p class="eyebrow dark">Our philosophy</p>
+                <h2>Guidance, never fear.</h2>
+                <p>We believe astrology should empower you—not define you. Infinity Divine brings ancient wisdom into
+                    everyday life with warmth, honesty and respect for your free will.</p>
+                <div class="signature">Infinity Divine <span>✦</span>
+                </div>
+            </div>
+            <div class="testimonial">
+                <span class="quote">“</span>
+                <blockquote>The reading gave language to everything I had been feeling. I left with calm, direction and
+                    a beautiful moonstone bracelet that now feels like a daily anchor.</blockquote>
+                <p>— Ananya R. <span>★★★★★</span></p>
+            </div>
+        </section>
+        <section class="newsletter">
+            <p class="eyebrow">A little cosmic note</p>
+            <h2>Wisdom for your inbox</h2>
+            <p>Moon guidance, crystal rituals and thoughtful reminders—sent gently.</p>
+            <form id="newsletterForm">
+                <input type="email" placeholder="Your email address" required>
+                <button>Join the circle →</button>
+            </form>
+            <small id="newsletterStatus"></small>
+        </section>
+    </main>
+    <footer>
+        <a class="brand footer-brand" href="index.html">
+            <span class="brand-mark">☾</span>
+            <span>
+                <strong>Infinity Divine</strong>
+                <small>ASTROLOGY & HEALING</small>
+            </span>
+        </a>
+        <div>
+            <strong>Explore</strong>
+            <a href="shop.html">Shop crystals</a>
+            <a href="consultation.html">Consultations</a>
+            <a href="#about">Our story</a>
+        </div>
+        <div>
+            <strong>Help</strong>
+            <a href="mailto:hello@infinitydivine.in">Contact</a>
+            <a href="#">Shipping & returns</a>
+            <a href="#">Care guide</a>
+        </div>
+        <div>
+            <strong>Connect</strong>
+            <a href="#">Instagram</a>
+            <a href="#">WhatsApp</a>
+            <a href="mailto:hello@infinitydivine.in">hello@infinitydivine.in</a>
+        </div>
+        <p class="copyright">© 2026 Infinity Divine. Made with intention.</p>
+    </footer>
+    <script src="catalog.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="auth.js"></script>
+    <script src="panchang.js"></script>
+    <script src="home.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const welcomeScreen = document.getElementById("welcomeScreen");
+
+            setTimeout(() => {
+                welcomeScreen.style.display = "none";
+            }, 3000);
+
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+.today-panchang {
+    padding: 80px 7vw;
+    background: linear-gradient(135deg, #120f26, #1b1636);
+}
+
+.panchang-card {
+    max-width: 1200px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(201, 169, 106, 0.25);
+    border-radius: 20px;
+    padding: 40px;
+    backdrop-filter: blur(12px);
+}
+
+.panchang-card h2 {
+    text-align: center;
+    color: #d4af37;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 42px;
+    margin-bottom: 40px;
+}
+
+.panchang-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px;
+}
+
+.panchang-grid div {
+    background: rgba(255, 255, 255, .04);
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: .3s;
+}
+
+.panchang-grid div:hover {
+    transform: translateY(-5px);
+    border-color: #d4af37;
+}
+
+.panchang-grid span {
+    display: block;
+    color: #c8bca8;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.panchang-grid strong {
+    display: block;
+    color: white;
+    font-size: 18px;
+    font-family: "Cormorant Garamond", serif;
+}
+
+@media(max-width:900px) {
+
+    .panchang-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media(max-width:600px) {
+
+    .panchang-grid {
+        grid-template-columns: 1fr;
+    }
+
+}

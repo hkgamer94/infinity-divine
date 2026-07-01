@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Astrology Consultation | Infinity Divine</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="auth.css">
+        <link rel="stylesheet" href="pages.css">
+        <link rel="stylesheet" href="consultation-page.css">
+    </head>
+    <body>
+<div class="announcement">✦ Online astrology consultations available worldwide ✦</div>
+<header class="site-header">
+    <a class="brand" href="index.html">
+        <span class="brand-mark">☾</span>
+        <span>
+            <strong>Infinity Divine</strong>
+            <small>ASTROLOGY & HEALING</small>
+        </span>
+    </a>
+    <button class="menu-toggle">☰</button>
+    <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a class="active-nav" href="consultation.html">Consultations</a>
+        <a href="index.html#about">Our Story</a>
+    </nav>
+    <button class="account-button" id="accountButton">Sign in</button>
+    <a class="cart-button" href="shop.html#bag">Bag <span id="cartCount">0</span>
+    </a>
+</header>
+<main>
+    <section class="consultation">
+
+    <div class="consult-visual">
+    <img id="serviceImage"
+         src="assets/moon-default.jpg"
+         alt="Consultation Service">
+</div>
+
+<div class="consult-content">
+    <p class="eyebrow">One-to-one guidance</p>
+
+    <h2>Your chart is a map.<br>Let us read it together.</h2>
+
+    <p>
+        A personal consultation offers thoughtful insight into your relationships,
+        career, timing and inner patterns—so your next step feels clearer.
+    </p>
+
+    <div class="session-types">
+
+        <div id="birthChart">
+            <span>01</span>
+            <p>
+                <strong>Birth Chart Reading</strong>
+                <small>Deep insight into your nature and path · 60 min</small>
+            </p>
+            <b>₹2,499</b>
+        </div>
+
+        <div id="oneQuestion">
+            <span>02</span>
+            <p>
+                <strong>Ask One Question</strong>
+                <small>Focused guidance for one situation · 30 min</small>
+            </p>
+            <b>₹1,299</b>
+        </div>
+
+        <div id="relationship">
+            <span>03</span>
+            <p>
+                <strong>Relationship Reading</strong>
+                <small>Compatibility and shared patterns · 60 min</small>
+            </p>
+            <b>₹2,999</b>
+        </div>
+
+        <div id="eKundli">
+            <span>04</span>
+            <p>
+            <strong>E-Kundli</strong>
+            <small>Complete digital Kundli PDF with basic astrological insights</small>
+            </p>
+            <b>₹51</b>
+        </div>
+</div>
+</div>
+</section>
+<section class="booking-section">
+    <div class="booking-copy">
+        <p class="eyebrow dark">Begin your journey</p>
+        <h2>Book your consultation</h2>
+        <p>Share your preferred date and contact details. We’ll contact you to confirm a suitable time.</p>
+    </div>
+    <form id="bookingForm">
+        <label>Full name<input name="name" required placeholder="Your name"></label>
+        <label>Email<input name="email" type="email" required placeholder="you@example.com"></label>
+        <label>Phone / WhatsApp<input name="phone" required placeholder="+91 98765 43210"></label>
+        <label>Consultation<select name="session">
+            <option>Birth Chart Reading — ₹2,499</option>
+            <option>Ask One Question — ₹1,299</option>
+            <option>Relationship Reading — ₹2,999</option>
+            <option>E-Kundli — ₹51</option>
+            <select name="session">
+        </select>
+    </label>
+    <label>Preferred date<input name="date" type="date" required></label>
+    <label>Anything you want us to know<textarea name="message" placeholder="Optional note"></textarea></label>
+    <button class="button primary">Request my session</button>
+    <strong id="bookingStatus"></strong>
+</form>
+</section>
+</main>
+<footer class="simple-footer">
+    <a class="brand" href="index.html">
+        <span class="brand-mark">☾</span>
+        <span>
+            <strong>Infinity Divine</strong>
+            <small>ASTROLOGY & HEALING</small>
+        </span>
+    </a>
+    <p>© 2026 Infinity Divine · Guidance, never fear</p>
+</footer>
+<script src="catalog.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
+<script src="auth.js"></script>
+<script src="consultation.js"></script>
+<script src="consultation-hover.js"></script>
+</body>
+</html>

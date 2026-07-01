@@ -1,0 +1,1194 @@
+:root {
+    --ink: #17132a;
+    --navy: #100d25;
+    --purple: #3f2b63;
+    --plum: #6c456e;
+    --gold: #c9a96a;
+    --cream: #f7f2e9;
+    --paper: #fffdf9;
+    --muted: #6e6878;
+    --line: #ded5c8
+}
+
+* {
+    box-sizing: border-box
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px
+}
+
+button,
+input,
+select {
+    font: inherit
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+.announcement {
+    height: 34px;
+    background: #17112d;
+    color: #d9c394;
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: .12em;
+    padding: 9px
+}
+
+.site-header {
+    height: 82px;
+    display: flex;
+    align-items: center;
+    padding: 0 5vw;
+    background: rgba(255, 253, 249, .96);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    border-bottom: 1px solid rgba(20, 15, 40, .08)
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 260px
+}
+
+.brand-mark {
+    font-size: 35px;
+    color: var(--gold);
+    transform: rotate(-18deg)
+}
+
+.brand strong {
+    display: block;
+    font: 600 23px/1 "Cormorant Garamond", serif
+}
+
+.brand small {
+    display: block;
+    font-size: 8px;
+    letter-spacing: .25em;
+    margin-top: 5px;
+    color: var(--muted)
+}
+
+.main-nav {
+    display: flex;
+    gap: 34px;
+    margin: auto
+}
+
+.main-nav a {
+    font-size: 13px
+}
+
+.main-nav a:hover {
+    color: #765886
+}
+
+.cart-button,
+.menu-toggle {
+    background: none;
+    border: 0;
+    cursor: pointer
+}
+
+.cart-button {
+    border-bottom: 1px solid var(--ink);
+    padding: 7px 0
+}
+
+.cart-button span {
+    display: inline-grid;
+    place-items: center;
+    background: var(--ink);
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-left: 5px;
+    font-size: 10px
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 22px
+}
+
+.hero {
+    min-height: 690px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #08081a;
+    color: white
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(7, 8, 27, .96) 0%, rgba(9, 9, 27, .72) 40%, rgba(9, 7, 24, .05) 72%)
+}
+
+.hero-content {
+    position: relative;
+    width: 610px;
+    margin-left: 8vw;
+    z-index: 1
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: .25em;
+    color: #d5bc82;
+    font-size: 10px;
+    font-weight: 600
+}
+
+.eyebrow.dark {
+    color: #856c45
+}
+
+.hero h1,
+.section-heading h2,
+.consult-content h2,
+.about h2,
+.newsletter h2,
+.modal h2 {
+    font: 600 clamp(44px, 5.2vw, 73px)/.96 "Cormorant Garamond", serif;
+    margin: 22px 0
+}
+
+.hero h1 em {
+    font-weight: 500;
+    color: #d1b777
+}
+
+.hero-content>p:not(.eyebrow) {
+    font: 400 18px/1.7 "Cormorant Garamond", serif;
+    color: #ddd7e7;
+    max-width: 480px
+}
+
+.hero-actions {
+    display: flex;
+    gap: 13px;
+    margin-top: 32px
+}
+
+.button {
+    border: 1px solid transparent;
+    padding: 15px 24px;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block
+}
+
+.button.primary {
+    background: #f2e8d4;
+    color: #171126
+}
+
+.button.ghost {
+    border-color: rgba(255, 255, 255, .5);
+    color: white;
+    background: transparent
+}
+
+.button.gold {
+    background: var(--gold);
+    color: #171126
+}
+
+.trust-row {
+    display: flex;
+    gap: 28px;
+    margin-top: 52px;
+    color: #bfb6cd;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .1em
+}
+
+.section {
+    padding: 100px 7vw
+}
+
+.section-heading.centered {
+    text-align: center
+}
+
+.section-heading h2,
+.about h2,
+.newsletter h2,
+.modal h2 {
+    font-size: 47px;
+    margin: 10px 0
+}
+
+.intention-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-top: 42px
+}
+
+.intention-grid a {
+    padding: 30px 15px;
+    text-align: center;
+    border: 1px solid #e8e0d5;
+    background: white;
+    transition: .25s
+}
+
+.intention-grid a:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+    box-shadow: 0 14px 35px rgba(43, 31, 65, .08)
+}
+
+.intention-grid span {
+    display: block;
+    font: 30px "Cormorant Garamond";
+    color: #9272a0;
+    margin-bottom: 12px
+}
+
+.intention-grid strong {
+    display: block;
+    font: 600 19px "Cormorant Garamond"
+}
+
+.intention-grid small {
+    color: var(--muted);
+    font-size: 10px
+}
+
+.shop {
+    background: var(--cream)
+}
+
+.section-heading.split {
+    display: flex;
+    align-items: end;
+    justify-content: space-between
+}
+
+.section-heading.split>p {
+    width: 340px;
+    color: var(--muted);
+    line-height: 1.7
+}
+
+.filters {
+    display: flex;
+    gap: 9px;
+    margin: 30px 0
+}
+
+.filters button {
+    border: 1px solid #cfc5b5;
+    background: transparent;
+    padding: 9px 17px;
+    border-radius: 25px;
+    font-size: 11px;
+    cursor: pointer
+}
+
+.filters button.active,
+.filters button:hover {
+    background: var(--ink);
+    color: white;
+    border-color: var(--ink)
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px
+}
+
+.product-card {
+    background: white;
+    position: relative
+}
+
+.product-art {
+    height: 280px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    position: relative
+}
+
+.product-art::after {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(29, 20, 48, .12);
+    filter: blur(10px);
+    bottom: 42px
+}
+
+.bracelet {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 24px dotted var(--stone);
+    filter: drop-shadow(0 8px 7px rgba(28, 16, 50, .25));
+    position: relative;
+    z-index: 1
+}
+
+.crystal {
+    width: 105px;
+    height: 165px;
+    background: linear-gradient(135deg, #fff9 0%, var(--stone) 40%, #312047 100%);
+    clip-path: polygon(50% 0, 85% 25%, 78% 100%, 20% 100%, 15% 25%);
+    filter: drop-shadow(0 12px 9px rgba(28, 16, 50, .25));
+    z-index: 1
+}
+
+.product-info {
+    padding: 18px 20px 22px
+}
+
+.product-info small {
+    color: #8a7c69;
+    text-transform: uppercase;
+    font-size: 8px;
+    letter-spacing: .15em
+}
+
+.product-info h3 {
+    font: 600 21px "Cormorant Garamond";
+    margin: 7px 0 4px
+}
+
+.product-info>p {
+    font-size: 11px;
+    color: var(--muted);
+    margin: 0 0 15px
+}
+
+.product-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.add-cart {
+    background: none;
+    border: 0;
+    border-bottom: 1px solid var(--ink);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    padding: 5px 0;
+    cursor: pointer
+}
+
+.badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: white;
+    padding: 5px 8px;
+    z-index: 2;
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: .1em
+}
+
+.consultation {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    background: #15112b;
+    color: white;
+    min-height: 720px;
+    align-items: stretch;
+}
+
+.consult-visual {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#serviceImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.moon {
+    font: 180px "Cormorant Garamond";
+    color: #e2c88d;
+    text-shadow: 0 0 50px #d1ac63
+}
+
+.orbit {
+    position: absolute;
+    border: 1px solid rgba(221, 197, 145, .28);
+    border-radius: 50%
+}
+
+.orbit-one {
+    width: 430px;
+    height: 430px
+}
+
+.orbit-two {
+    width: 620px;
+    height: 620px
+}
+
+.star {
+    position: absolute;
+    color: #e8c87e
+}
+
+.s1 {
+    top: 23%;
+    left: 20%;
+    font-size: 30px
+}
+
+.s2 {
+    bottom: 25%;
+    right: 20%;
+    font-size: 20px
+}
+
+.s3 {
+    top: 18%;
+    right: 24%;
+    font-size: 40px
+}
+
+.consult-content {
+    padding: 50px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-self: stretch;
+}
+
+.consult-content h2 {
+    font-size: 52px;
+    margin: 15px 0 20px;
+}
+
+.consult-content > p:not(.eyebrow) {
+    color: #c7bfd1;
+    line-height: 1.75;
+    max-width: 590px;
+}
+
+.session-types {
+    margin: 32px 0
+}
+
+.session-types>div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-top: 1px solid rgba(255, 255, 255, .14);
+    padding: 18px 0
+}
+
+.session-types>div:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, .14)
+}
+
+.session-types span {
+    font: 18px "Cormorant Garamond";
+    color: var(--gold)
+}
+
+.session-types p {
+    margin: 0;
+    flex: 1
+}
+
+.session-types strong {
+    display: block;
+    font: 600 18px "Cormorant Garamond"
+}
+
+.session-types small {
+    color: #9d95a8;
+    font-size: 10px
+}
+
+.session-types b {
+    font-size: 12px;
+    color: #dac591
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10vw;
+    align-items: center
+}
+
+.about-card>p:not(.eyebrow) {
+    line-height: 1.8;
+    color: var(--muted);
+    max-width: 520px
+}
+
+.signature {
+    font: italic 22px "Cormorant Garamond";
+    color: #765886;
+    margin-top: 25px
+}
+
+.testimonial {
+    background: #f4ede3;
+    padding: 60px
+}
+
+.quote {
+    font: 80px/0.5 "Cormorant Garamond";
+    color: #c9aa75
+}
+
+.testimonial blockquote {
+    font: 500 26px/1.45 "Cormorant Garamond";
+    margin: 20px 0
+}
+
+.testimonial p {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .12em
+}
+
+.testimonial p span {
+    color: #ac8749;
+    margin-left: 10px
+}
+
+.newsletter {
+    background: #6c4c70;
+    color: white;
+    text-align: center;
+    padding: 80px 20px
+}
+
+.newsletter h2 {
+    margin: 10px
+}
+
+.newsletter>p:not(.eyebrow) {
+    color: #e0d8e1
+}
+
+.newsletter form {
+    width: min(500px, 100%);
+    display: flex;
+    margin: 30px auto 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, .6)
+}
+
+.newsletter input {
+    flex: 1;
+    background: none;
+    border: 0;
+    color: white;
+    padding: 14px 5px;
+    outline: none
+}
+
+.newsletter input::placeholder {
+    color: #d7cbd8
+}
+
+.newsletter button {
+    background: none;
+    border: 0;
+    color: white;
+    text-transform: uppercase;
+    font-size: 9px;
+    letter-spacing: .12em;
+    cursor: pointer
+}
+
+footer {
+    background: #0f0d20;
+    color: #bdb6c6;
+    padding: 60px 7vw 30px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.3fr;
+    gap: 35px;
+    position: relative
+}
+
+footer .brand {
+    color: white
+}
+
+footer>div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 11px
+}
+
+footer>div strong {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: .13em;
+    font-size: 9px;
+    margin-bottom: 10px
+}
+
+.copyright {
+    grid-column: 1/-1;
+    border-top: 1px solid #2c273c;
+    padding-top: 25px;
+    margin-top: 30px;
+    font-size: 9px
+}
+
+.drawer-backdrop {
+    position: fixed;
+    inset: 0;
+    background: #080616aa;
+    z-index: 40;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s
+}
+
+.cart-drawer {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: min(430px, 100%);
+    height: 100%;
+    background: var(--paper);
+    z-index: 41;
+    transform: translateX(100%);
+    transition: .35s;
+    display: flex;
+    flex-direction: column
+}
+
+.cart-open .drawer-backdrop {
+    opacity: 1;
+    visibility: visible
+}
+
+.cart-open .cart-drawer {
+    transform: none
+}
+
+.drawer-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 30px;
+    border-bottom: 1px solid var(--line)
+}
+
+.drawer-header h2 {
+    font: 600 32px "Cormorant Garamond";
+    margin: 0
+}
+
+.close-cart,
+.close-modal {
+    border: 0;
+    background: none;
+    font-size: 28px;
+    cursor: pointer
+}
+
+.cart-items {
+    padding: 15px 30px;
+    overflow: auto;
+    flex: 1
+}
+
+.empty-cart {
+    text-align: center;
+    color: var(--muted);
+    padding: 80px 10px
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 65px 1fr auto;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: center
+}
+
+.cart-thumb {
+    width: 65px;
+    height: 65px;
+    border-radius: 3px;
+    display: grid;
+    place-items: center;
+    font-size: 28px
+}
+
+.cart-item h4 {
+    font: 600 17px "Cormorant Garamond";
+    margin: 0
+}
+
+.cart-item small {
+    color: var(--muted)
+}
+
+.cart-item button {
+    border: 0;
+    background: none;
+    cursor: pointer;
+    color: #9b6e6e
+}
+
+.cart-footer {
+    padding: 22px 30px;
+    border-top: 1px solid var(--line)
+}
+
+.cart-footer>div {
+    display: flex;
+    justify-content: space-between;
+    font-size: 17px
+}
+
+.cart-footer small {
+    display: block;
+    color: var(--muted);
+    margin: 7px 0 18px
+}
+
+.cart-footer .button {
+    width: 100%;
+    background: var(--ink);
+    color: white
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: #090619bb;
+    z-index: 50;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s
+}
+
+.modal.open {
+    opacity: 1;
+    visibility: visible
+}
+
+.modal-card {
+    background: var(--paper);
+    width: min(520px, 100%);
+    padding: 42px;
+    position: relative;
+    max-height: 95vh;
+    overflow: auto
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 18px
+}
+
+.modal h2 {
+    font-size: 39px
+}
+
+.modal-card>p:not(.eyebrow) {
+    color: var(--muted)
+}
+
+.modal form {
+    display: grid;
+    gap: 13px;
+    margin-top: 25px
+}
+
+.modal label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .1em
+}
+
+.modal input,
+.modal select {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border: 1px solid var(--line);
+    background: white
+}
+
+.modal .button {
+    background: var(--ink);
+    color: white;
+    margin-top: 8px
+}
+
+.toast {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translate(-50%, 30px);
+    background: #1b1530;
+    color: white;
+    padding: 13px 22px;
+    z-index: 60;
+    opacity: 0;
+    transition: .3s;
+    font-size: 12px
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translate(-50%, 0)
+}
+
+@media(max-width:900px) {
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 82px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 25px 7vw;
+        box-shadow: 0 10px 20px #0001
+    }
+
+    .main-nav.open {
+        display: flex
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+        margin-right: 20px
+    }
+
+    .brand {
+        min-width: 0
+    }
+
+    .hero {
+        min-height: 650px
+    }
+
+    .hero-image {
+        object-position: 62% center
+    }
+
+    .hero-overlay {
+        background: linear-gradient(90deg, rgba(7, 8, 27, .96), rgba(9, 9, 27, .7))
+    }
+
+    .hero-content {
+        margin: 0 7vw
+    }
+
+    .trust-row {
+        flex-wrap: wrap
+    }
+
+    .intention-grid {
+        grid-template-columns: repeat(3, 1fr)
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .consultation {
+        grid-template-columns: 1fr
+    }
+
+    .consult-visual {
+        height: 450px
+    }
+
+    .about {
+        grid-template-columns: 1fr
+    }
+
+    footer {
+        grid-template-columns: 2fr 1fr 1fr
+    }
+
+    .footer-brand {
+        grid-column: 1/-1
+    }
+}
+
+@media(max-width:580px) {
+    .announcement {
+        font-size: 8px
+    }
+
+    .site-header {
+        height: 68px
+    }
+
+    .brand strong {
+        font-size: 19px
+    }
+
+    .brand small {
+        font-size: 6px
+    }
+
+    .main-nav {
+        top: 68px
+    }
+
+    .cart-button {
+        font-size: 0
+    }
+
+    .cart-button span {
+        font-size: 10px
+    }
+
+    .hero {
+        min-height: 690px
+    }
+
+    .hero h1 {
+        font-size: 48px
+    }
+
+    .hero-content>p:not(.eyebrow) {
+        font-size: 16px
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: flex-start
+    }
+
+    .trust-row {
+        display: none
+    }
+
+    .section {
+        padding: 75px 5vw
+    }
+
+    .section-heading h2,
+    .about h2,
+    .newsletter h2 {
+        font-size: 39px
+    }
+
+    .intention-grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .intention-grid a:last-child {
+        grid-column: 1/-1
+    }
+
+    .section-heading.split {
+        display: block
+    }
+
+    .section-heading.split>p {
+        width: auto
+    }
+
+    .filters {
+        overflow-x: auto;
+        padding-bottom: 5px
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px
+    }
+
+    .product-art {
+        height: 190px
+    }
+
+    .bracelet {
+        width: 105px;
+        height: 105px;
+        border-width: 17px
+    }
+
+    .crystal {
+        width: 70px;
+        height: 115px
+    }
+
+    .product-info {
+        padding: 13px
+    }
+
+    .product-info h3 {
+        font-size: 17px
+    }
+
+    .product-info>p {
+        display: none
+    }
+
+    .product-bottom {
+        align-items: end;
+        gap: 5px
+    }
+
+    .add-cart {
+        font-size: 7px
+    }
+
+    .consult-visual {
+        height: 330px
+    }
+
+    .orbit-one {
+        width: 280px;
+        height: 280px
+    }
+
+    .orbit-two {
+        width: 400px;
+        height: 400px
+    }
+
+    .moon {
+        font-size: 120px
+    }
+
+    .consult-content {
+        padding: 70px 7%
+    }
+
+    .consult-content h2 {
+        font-size: 42px
+    }
+
+    .session-types b {
+        font-size: 10px
+    }
+
+    .testimonial {
+        padding: 40px 28px
+    }
+
+    .testimonial blockquote {
+        font-size: 22px
+    }
+
+    footer {
+        grid-template-columns: 1fr 1fr
+    }
+
+    .footer-brand {
+        grid-column: 1/-1
+    }
+
+    .copyright {
+        grid-column: 1/-1
+    }
+
+    .modal-card {
+        padding: 35px 25px
+    }
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 1
+}
+
+#welcomeScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0f0817;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+.brand-logo {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    margin-right: 0px;
+}
+
+.welcome-content h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #d4af37;
+}
+
+.brand strong {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.brand small {
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: 2px;
+}

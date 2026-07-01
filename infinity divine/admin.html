@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin Dashboard | Infinity Divine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css"><link rel="stylesheet" href="product-admin.css"><link rel="stylesheet" href="order-admin.css">
+</head>
+<body>
+  <div class="login-screen" id="loginScreen">
+    <form class="login-card" id="loginForm">
+      <div class="login-mark">☾</div><p>INFINITY DIVINE</p><h1>Admin portal</h1><span>Enter your PIN to manage consultations.</span>
+      <label>Admin PIN<input type="password" id="pin" inputmode="numeric" placeholder="Enter PIN" required></label>
+      <button type="submit">Open dashboard</button><small id="loginError"></small>
+    </form>
+  </div>
+  <div class="admin-shell" id="adminShell" hidden>
+    <aside>
+      <a class="admin-brand" href="index.html"><span>☾</span><div><strong>Infinity Divine</strong><small>ADMIN PORTAL</small></div></a>
+      <nav><a class="active" href="#">▦ <span>Overview</span></a><a href="#products">◇ <span>Products</span></a><a href="#orders">▤ <span>Orders</span></a><a href="#bookings">♙ <span>Consultations</span></a><a href="index.html#shop">↗ <span>View shop</span></a></nav>
+      <button id="logout">↪ <span>Log out</span></button>
+    </aside>
+    <main>
+      <header><div><p>ADMIN DASHBOARD</p><h1>Welcome back <em>✦</em></h1></div><a href="index.html" target="_blank">View website ↗</a></header>
+      <section class="stats">
+        <article><span class="stat-icon purple">♙</span><div><small>Total bookings</small><strong id="totalStat">0</strong><p>All consultation requests</p></div></article>
+        <article><span class="stat-icon gold">✦</span><div><small>New requests</small><strong id="newStat">0</strong><p>Waiting for your reply</p></div></article>
+        <article><span class="stat-icon green">✓</span><div><small>Confirmed</small><strong id="confirmedStat">0</strong><p>Upcoming sessions</p></div></article>
+        <article><span class="stat-icon rose">₹</span><div><small>Potential revenue</small><strong id="revenueStat">₹0</strong><p>From active bookings</p></div></article>
+      </section>
+      <section class="panel product-panel" id="products">
+        <div class="panel-head"><div><p>SHOP MANAGEMENT</p><h2>Products</h2></div><button class="primary-action" id="addProduct">+ Add new product</button></div>
+        <div class="product-manager">
+          <form class="product-form" id="productForm" hidden>
+            <div class="form-title"><div><p id="formEyebrow">NEW PRODUCT</p><h3 id="formTitle">Add to your collection</h3></div><button type="button" id="closeProductForm">×</button></div>
+            <input type="hidden" id="productId">
+            <div class="form-grid">
+              <label>Product name<input id="productName" required placeholder="e.g. Ruby Energy Bracelet"></label>
+              <label>Price (₹)<input id="productPrice" required type="number" min="1" placeholder="1499"></label>
+              <label>Category<select id="productCategory"><option>Love</option><option>Protection</option><option>Abundance</option><option>Clarity</option><option>Healing</option></select></label>
+              <label>Product type<select id="productType"><option value="bracelet">Bracelet</option><option value="crystal">Stone / Crystal</option></select></label>
+              <label class="wide">Short description<input id="productDesc" required placeholder="Shown on the shop card"></label>
+              <label class="wide">Full product description<textarea id="productDetails" placeholder="Describe the stone, its meaning, materials and story"></textarea></label>
+              <label class="wide">Benefits<textarea id="productBenefits" placeholder="Add one benefit per line"></textarea></label>
+              <label class="wide">How to use and care<textarea id="productUsage" placeholder="How to wear, cleanse or care for this product"></textarea></label>
+              <label>Badge (optional)<input id="productBadge" placeholder="New or Bestseller"></label>
+              <label>Display colour<input id="productColor" type="color" value="#8d68ab"></label>
+              <label class="wide image-field">Product image<input id="productImage" type="file" accept="image/png,image/jpeg,image/webp"><small>JPG, PNG or WebP. Images are resized automatically.</small></label>
+            </div>
+            <div class="image-preview" id="imagePreview"><span>◇</span><p>No image selected</p></div>
+            <div class="form-buttons"><button type="button" id="removeImage">Remove image</button><button type="submit">Save product</button></div>
+          </form>
+          <div class="admin-products" id="adminProducts"></div>
+          <div class="empty product-empty" id="productEmpty"><span>◇</span><h3>No products in your shop</h3><p>Add your first bracelet or gemstone.</p></div>
+        </div>
+      </section>
+      <section class="panel" id="orders">
+        <div class="panel-head"><div><p>SHOP ORDERS</p><h2>Customer deliveries</h2></div><select id="orderFilter"><option>All orders</option><option>New</option><option>Confirmed</option><option>Packed</option><option>Shipped</option><option>Delivered</option><option>Cancelled</option></select></div>
+        <div class="table-wrap"><table><thead><tr><th>Customer</th><th>Products</th><th>Delivery address</th><th>Total</th><th>Payment</th><th>Status</th><th></th></tr></thead><tbody id="orderRows"></tbody></table><div class="empty" id="orderEmpty"><span>▤</span><h3>No orders yet</h3><p>Orders placed from the shopping bag will appear here.</p></div></div>
+      </section>
+      <section class="panel" id="bookings">
+        <div class="panel-head"><div><p>CONSULTATION REQUESTS</p><h2>Recent bookings</h2></div><div class="panel-actions"><input id="search" placeholder="Search name or phone…"><select id="statusFilter"><option>All statuses</option><option>New</option><option>Confirmed</option><option>Completed</option><option>Cancelled</option></select></div></div>
+        <div class="table-wrap"><table><thead><tr><th>Client</th><th>Consultation</th><th>Preferred date</th><th>Requested</th><th>Status</th><th></th></tr></thead><tbody id="bookingRows"></tbody></table><div class="empty" id="emptyState"><span>☾</span><h3>No consultation requests yet</h3><p>New bookings from your website will appear here.</p><a href="index.html#consultation">Test the booking form →</a></div></div>
+      </section>
+    </main>
+  </div>
+  <div class="toast" id="adminToast"></div>
+  <script src="admin.js"></script>
+</body></html>
