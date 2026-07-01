@@ -18,7 +18,7 @@ let bookings=[],products=[],orders=[],pendingImage='';
 
 function enterAdmin(){loginScreen.style.display='none';adminShell.hidden=false;loadBookings();loadProducts();loadOrders()}
 if(sessionStorage.getItem('infinityAdmin')==='true')enterAdmin();
-document.querySelector('#loginForm').addEventListener('submit',e=>{e.preventDefault();if(document.querySelector('#pin').value==='2026'){sessionStorage.setItem('infinityAdmin','true');enterAdmin()}else document.querySelector('#loginError').textContent='Incorrect PIN. Please try again.'});
+document.querySelector('#loginForm').addEventListener('submit',e=>{e.preventDefault();if(document.querySelector('#pin').value==='DHarmishtha'){sessionStorage.setItem('infinityAdmin','true');enterAdmin()}else document.querySelector('#loginError').textContent='Incorrect PIN. Please try again.'});
 document.querySelector('#logout').addEventListener('click',()=>{sessionStorage.removeItem('infinityAdmin');location.reload()});
 
 function loadBookings(){bookings=JSON.parse(localStorage.getItem(STORAGE)||'[]');render()}
