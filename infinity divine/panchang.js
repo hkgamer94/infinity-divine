@@ -1,23 +1,27 @@
 window.addEventListener("load", async () => {
 
-    if (!window.supabaseClient && typeof supabaseClient === "undefined") {
-        console.log("Supabase client not ready.");
+    if (!window.supabaseClient) {
+        console.error("Supabase client not found.");
         return;
     }
 
-    const client =
-        window.supabaseClient ||
-        supabaseClient;
-
-    const { data, error } = await client
+    const { data, error } = await window.supabaseClient
         .from("daily_panchang")
         .select("*")
         .order("panchang_date", { ascending: false })
         .limit(1)
-        .single();
+        .maybeSingle();
+
+    console.log("Supabase Data:", data);
+    console.log("Supabase Error:", error);
 
     if (error) {
         console.error(error);
+        return;
+    }
+
+    if (!data) {
+        console.log("No Panchang data found.");
         return;
     }
 
